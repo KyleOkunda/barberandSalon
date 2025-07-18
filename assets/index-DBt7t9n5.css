@@ -3851,3 +3851,7 @@ html {
 [data-side="right"] .\[\[data-side\=right\]_\&\]\:cursor-e-resize {
   cursor: e-resize;
 }
+
+.grey-color {
+  color: rgb(49 49 49);
+}
