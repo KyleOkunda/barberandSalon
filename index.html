@@ -566,7 +566,29 @@
       let currentSlide = 0;
       let sliderInterval;
 
-      let slide = slides[0];
+      let slide = document.getElementsByClassName("slide");
+      let slidesArray = Array.from(slide);
+      let i = 1;
+      setInterval(function () {
+        slidesArray.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        slidesArray[i].classList.add("active");
+
+        slidesArray.forEach((slide) => {
+          if (slide.classList.contains("active")) {
+            slide.style.opacity = "1";
+          } else {
+            slide.style.opacity = "0";
+          }
+        });
+
+        i++;
+        if (i > 2) {
+          i = 0;
+        }
+      }, 5000);
 
       function showSlide(idx) {
         slides.forEach((slide, i) => {
